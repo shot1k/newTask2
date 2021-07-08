@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme The Band</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font: 400 15px/1.8 Lato, sans-serif;
+      color: #777;
+    }
+
+    h3,
+    h4 {
+      margin: 10px 0 30px 0;
+      letter-spacing: 10px;
+      font-size: 20px;
+      color: #111;
+    }
+
+    .container {
+      padding: 80px 120px;
+    }
+
+    .person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+    }
+
+    .person:hover {
+      border-color: #f1f1f1;
+    }
+
+    .carousel-inner img {
+      -webkit-filter: grayscale(90%);
+      filter: grayscale(90%);
+      /* make all photos black and white */
+      width: 100%;
+      /* Set width to 100% */
+      margin: auto;
+    }
+
+    .carousel-caption h3 {
+      color: #fff !important;
+    }
+
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none;
+        /* Hide the carousel text when the screen is less than 600 pixels wide */
+      }
+    }
+
+    .bg-1 {
+      background: #4842F9;
+      color: #bdbdbd;
+    }
+
+    .bg-1 h3 {
+      color: #fff;
+    }
+
+    .bg-1 p {
+      font-style: italic;
+    }
+
+    .list-group-item:first-child {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    .list-group-item:last-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+    }
+
+    .thumbnail p {
+      margin-top: 15px;
+      color: #fff;
+      background-color: #fff;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      border: 1px solid #333;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .nav-tabs li a {
+      color: #777;
+    }
+
+    #googleMap {
+      width: 100%;
+      height: 400px;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+
+    .navbar {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      background-color: #2d2d30;
+      border: 0;
+      font-size: 11px !important;
+      letter-spacing: 4px;
+      opacity: 0.9;
+    }
+
+    .navbar li a,
+    .navbar .navbar-brand {
+      color: #d5d5d5 !important;
+    }
+
+    .navbar-nav li a:hover {
+      color: #fff !important;
+    }
+
+    .navbar-nav li.active a {
+      color: #fff !important;
+      background-color: #29292c !important;
+    }
+
+    .navbar-default .navbar-toggle {
+      border-color: transparent;
+    }
+
+    .open .dropdown-toggle {
+      color: #fff;
+      background-color: #555 !important;
+    }
+
+    .dropdown-menu li a {
+      color: #000 !important;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: red !important;
+    }
+
+    footer {
+      background-color: #2d2d30;
+      color: #f5f5f5;
+      padding: 32px;
+    }
+
+    footer a {
+      color: #f5f5f5;
+    }
+
+    footer a:hover {
+      color: #777;
+      text-decoration: none;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    /*  */
+
+    .hovereffect {
+      width: 100%;
+      height: 100%;
+      float: left;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      cursor: default;
+    }
+
+    .hovereffect .overlay {
+      width: 100%;
+      position: absolute;
+      overflow: hidden;
+      right: 30%;
+      top: auto;
+      bottom: 30px;
+      padding: 1em;
+      height: 4.75em;
+      background: #79FAC4;
+      color: #3c4a50;
+      -webkit-transition: -webkit-transform 0.35s;
+      transition: transform 0.35s;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+      visibility: hidden;
+
+    }
+
+    .hovereffect img {
+      display: block;
+      position: relative;
+      -webkit-transition: -webkit-transform 0.35s;
+      transition: transform 0.35s;
+    }
+
+    .hovereffect:hover img {
+      -webkit-transform: translate3d(0, -10%, 0);
+      transform: translate3d(0, -10%, 0);
+    }
+
+    .hovereffect h2 {
+      text-transform: uppercase;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      font-size: 17px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      float: left;
+      margin: 0px;
+      display: inline-block;
+    }
+
+    .hovereffect a.info {
+      display: inline-block;
+      text-decoration: none;
+      padding: 7px 14px;
+      text-transform: uppercase;
+      color: #fff;
+      border: 1px solid #fff;
+      margin: 50px 0 0 0;
+      background-color: transparent;
+    }
+
+    .hovereffect a.info:hover {
+      box-shadow: 0 0 5px #fff;
+    }
+
+
+    .hovereffect p.icon-links a {
+      float: right;
+      color: #3c4a50;
+      font-size: 1.4em;
+      background-color: #ccc;
+    }
+
+    .hovereffect:hover p.icon-links a:hover,
+    .hovereffect:hover p.icon-links a:focus {
+      color: #00aaff;
+    }
+
+    .hovereffect h2,
+    .hovereffect p.icon-links a {
+      -webkit-transition: -webkit-transform 0.35s;
+      transition: transform 0.35s;
+      -webkit-transform: translate3d(0, 200%, 0);
+      transform: translate3d(0, 200%, 0);
+      visibility: visible;
+    }
+
+    .hovereffect p.icon-links a span:before {
+      display: inline-block;
+      padding: 8px 10px;
+      speak: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+
+    .hovereffect:hover .overlay,
+    .hovereffect:hover h2,
+    .hovereffect:hover p.icon-links a {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    .hovereffect:hover h2 {
+      -webkit-transition-delay: 0.05s;
+      transition-delay: 0.05s;
+    }
+
+    .hovereffect:hover p.icon-links a:nth-child(3) {
+      -webkit-transition-delay: 0.1s;
+      transition-delay: 0.1s;
+    }
+
+    .hovereffect:hover p.icon-links a:nth-child(2) {
+      -webkit-transition-delay: 0.15s;
+      transition-delay: 0.15s;
+    }
+
+    .hovereffect:hover p.icon-links a:first-child {
+      -webkit-transition-delay: 0.2s;
+      transition-delay: 0.2s;
+    }
+  </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#myPage">Logo</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#myPage">ABOUT</a></li>
+          <li><a href="#">SERVICES</a></li>
+          <li><a href="#tour">PROJECT</a></li>
+          <li><a href="#tour">TEAM</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="img1.jpg" alt="New York" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3>New York</h3>
+          <p>The atmosphere in New York is lorem ipsum.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="img2.jpg" alt="Chicago" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3>Chicago</h3>
+          <p>Thank you, Chicago - A night we won't forget.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="img3.jpg" alt="Los Angeles" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3>LA</h3>
+          <p>Even though the traffic was a mess, we had the best time playing at Venice Beach!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <!-- Container (TOUR Section) -->
+  <div id="tour" class="bg-1">
+    <div class="" style="padding: 35px;">
+
+
+      <div class="row text-center">
+        <!-- <p style="margin-right:600px">OUR TEAM</p> -->
+
+        <div class="col-sm-4">
+          <div class="hovereffect">
+            <img class="img-responsive" src="person1.png" height="300px" alt="">
+            <div class="overlay">
+              <p class="icon-links">
+                <a href="#">
+                  <span class="fa fa-twitter"></span>
+                </a>
+                <a href="#">
+                  <span class="fa fa-facebook"></span>
+                </a>
+                <a href="#">
+                  <span class="fa fa-instagram"></span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="hovereffect">
+            <img class="img-responsive" src="person2.png" background-color="black" alt="">
+            <div class="overlay">
+              <p class="icon-links">
+                <a href="#">
+                  <span class="fa fa-twitter"></span>
+                </a>
+                <a href="#">
+                  <span class="fa fa-facebook"></span>
+                </a>
+                <a href="#">
+                  <span class="fa fa-instagram"></span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="hovereffect">
+            <img class="img-responsive" src="person1.png" background-color="black" alt="">
+            <div class="overlay">
+              <p class="icon-links">
+                <a href="#">
+                  <span class="fa fa-twitter"></span>
+                </a>
+                <a href="#">
+                  <span class="fa fa-facebook"></span>
+                </a>
+                <a href="#">
+                  <span class="fa fa-instagram"></span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact" class="container">
+
+    <section class="contact-us">
+      <div class="container">
+        <!-- <div class="row">
+              <div class="col-md-7">
+                  <div class="section-title">
+                      <h2>Contact Us</h2>
+                      <p><b>Bootstrap 4 contact form</b> is designed with a Google map. contact form pages design is created by using Bootstrap and custom CSS</p>
+                  </div>
+              </div>
+          </div> -->
+        <div class="row">
+          <div class="col-lg-7">
+            <form action="/" class="mb-4 mb-lg-0">
+              <div class="form-row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" />
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" />
+                </div>
+              </div>
+              <div class="form-group">
+                <!-- <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" /> -->
+
+                
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" placeholder="Type Message"></textarea>
+              </div>
+              <button type="submit" class="btn btn-light">Contact Now</button>
+            </form>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571289.733943155!2d76.08560099999998!3d29.058775699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390e4a4b98404f57%3A0x75ffae70833e8448!2sShahbad%2C%20Haryana%20136135!5e0!3m2!1sen!2sin!4v1594195370933!5m2!1sen!2sin"
+                width="100%" height="350" frameborder="0" style="border: 0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <!-- <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a><br><br> -->
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="d-inline-flex justify-content-center px-2 px-md-2 px-lg-3 pt-3">
+          <p>Privacy Policy Terms of Use</p>
+        </div>
+      </div>
+      <div class="col-md-7 d-flex justify-content-center mb-3">
+        <div class="d-inline-flex justify-content-center px-2 px-md-2 px-lg-3 pt-3"> <a href="#">Copyright © your
+            website 2021</a> </div>
+      </div>
+      <div class="col-md-3 justify-content-center d-flex"> <a href="#">
+          <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+            <div class="fa fa-facebook"></div>
+          </div>
+        </a> <a href="#">
+          <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end">
+            <div class="fa fa-twitter"></div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3">
+            <div class="fa fa-linkedin"></div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      // Initialize Tooltip
+      $('[data-toggle="tooltip"]').tooltip();
+
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    })
+  </script>
+
+</body>
+
+</html>
